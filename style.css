@@ -998,16 +998,24 @@ footer {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    position: relative;
 }
 
 .articles-filter-wrap {
     display: flex;
+    flex-direction: column;
+    transition: 0.5s;
     gap: 1.5rem;
-    display: none;
+    top: 5rem;
+    left: -100%;
+    position: absolute;
+    background-color: var(--white);
 }
 
 .articles-filter-wrap.active {
     display: flex;
+    top: 5rem;
+    left: 0;
 }
 
 .articles-pagination {
@@ -1895,10 +1903,42 @@ footer {
 
     .articles-filter-wrap {
         display: flex;
+        flex-direction: row;
+        position: relative;
+        left: 0;
+        top: 0;
     }
 
     .articles-filter-button {
         display: none;
+    }
+
+    .button-st-black:hover {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+        color: var(--black)
+    }
+
+    .button-st-white:hover {
+        background-color: var(--green);
+        border: 1px solid var(--green);
+    }
+    
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
+    .nav-link {
+        transition: 0.3s;
+    }
+
+    .footer-main-link a:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--white);
+    }
+
+    .footer-main-link a {
+        transition: 0.3s;
     }
 }
 

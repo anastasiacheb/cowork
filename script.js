@@ -76,4 +76,10 @@ for (let i = 0; i < aboutCard.length; i++) {
 }
 
 /*filter mobile*/
+ 
+const filterButton = document.querySelector(".articles-filter-button");
+const filterList = document.querySelector(".articles-filter-wrap");
 
+filterButton.addEventListener("click", () => {
+    filterList.classList.toggle("active");
+})
