@@ -74,3 +74,6 @@ for (let i = 0; i < aboutCard.length; i++) {
 
     })
 }
+
+/*filter mobile*/
+

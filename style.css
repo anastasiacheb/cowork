@@ -1003,6 +1003,11 @@ footer {
 .articles-filter-wrap {
     display: flex;
     gap: 1.5rem;
+    display: none;
+}
+
+.articles-filter-wrap.active {
+    display: flex;
 }
 
 .articles-pagination {
@@ -1268,6 +1273,21 @@ footer {
 
 .post-author-name-name {
     text-transform: uppercase;
+}
+
+.main-art-header {
+    padding: 2rem 1.25rem;
+}
+
+.main-art-header-wrap {
+    padding: 3rem;
+    border-radius: 3rem;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+    align-items: center;
 }
 
 /*tablets*/
@@ -1860,6 +1880,25 @@ footer {
 
     .post-tags {
         flex-direction: column;
+    }
+
+    .main-art-header {
+        padding: 4rem;
+        max-width: 90rem;
+        margin: auto;
+    }
+
+    .main-art-header-wrap {
+        text-align: left;
+        align-items: start;
+    }
+
+    .articles-filter-wrap {
+        display: flex;
+    }
+
+    .articles-filter-button {
+        display: none;
     }
 }
 
