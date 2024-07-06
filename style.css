@@ -576,20 +576,26 @@ nav {
     transform: rotate(180deg);
 }
 
-#arrow-inactive {
-    cursor: auto;
+.arrow-inactive {
+    cursor: auto !important;
     filter: invert(47%) sepia(0%) saturate(686%) hue-rotate(134deg) brightness(106%) contrast(85%);
 }
 
 .clients-cards-wrap {
+    overflow: hidden;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.carusel__wrap {
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
     gap: 2rem;
+    width: 9999px;
+    transition: 0.3s;
 }
 
 .clients-card {
-    min-width: 100%;
+    width: 90vw;
 }
 
 .clients-card-footer {

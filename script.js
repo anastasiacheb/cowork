@@ -18,6 +18,45 @@ navLink.forEach(n => n.addEventListener("click", () => {
     document.body.classList.remove("body-overflow");
 })
 )
+
+
+let clientCardsWrap = document.querySelector(".carusel__wrap");
+let clientCard = document.querySelectorAll(".clients-card");
+let buttonLeft = document.querySelector(".left-arrow");
+let buttonRight = document.querySelector(".right-arrow");
+
+let position = 0;
+let cardWidth = 96;
+
+buttonRight.addEventListener("click", shiftToLeft);
+buttonLeft.addEventListener("click", shiftToRight);
+
+
+function shiftToLeft() {
+    buttonLeft.classList.remove("arrow-inactive");
+
+    position -= cardWidth;
+    position = Math.max(position, -cardWidth * (clientCard.length - 1));
+    clientCardsWrap.style.marginLeft = position + 'vw';
+
+    if (position == -cardWidth * (clientCard.length - 1)) {
+        buttonRight.classList.add("arrow-inactive");
+    };
+};
+
+function shiftToRight() {
+    buttonRight.classList.remove("arrow-inactive");
+
+    position += cardWidth;
+    position = Math.min(position, 0);
+    clientCardsWrap.style.marginLeft = position + 'vw';
+
+    if (position == 0) {
+        buttonLeft.classList.add("arrow-inactive");
+    };
+}
+
+
 /*
 const openButton = document.querySelectorAll(".question-card");
 const text = document.querySelectorAll(".question-card-disc");
@@ -83,3 +122,6 @@ const filterList = document.querySelector(".articles-filter-wrap");
 filterButton.addEventListener("click", () => {
     filterList.classList.toggle("active");
 })
+
+/*mobile carusel*/
+
