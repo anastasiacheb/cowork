@@ -19,44 +19,6 @@ navLink.forEach(n => n.addEventListener("click", () => {
 })
 )
 
-/*mobile carusel*/
-
-let clientCardsWrap = document.querySelector(".carusel__wrap");
-let clientCards = document.querySelectorAll(".clients-card");
-let buttonLeft = document.querySelector(".left-arrow");
-let buttonRight = document.querySelector(".right-arrow");
-
-let position = 0;
-let cardWidth = 96;
-
-buttonRight.addEventListener("click", shiftToLeft);
-buttonLeft.addEventListener("click", shiftToRight);
-
-
-function shiftToLeft() {
-    buttonLeft.classList.remove("arrow-inactive");
-
-    position -= cardWidth;
-    position = Math.max(position, -cardWidth * (clientCards.length - 1));
-    clientCardsWrap.style.marginLeft = position + 'vw';
-
-    if (position == -cardWidth * (clientCards.length - 1)) {
-        buttonRight.classList.add("arrow-inactive");
-    };
-};
-
-function shiftToRight() {
-    buttonRight.classList.remove("arrow-inactive");
-
-    position += cardWidth;
-    position = Math.min(position, 0);
-    clientCardsWrap.style.marginLeft = position + 'vw';
-
-    if (position == 0) {
-        buttonLeft.classList.add("arrow-inactive");
-    };
-}
-
 /*clients amimation*/
 
 window.addEventListener("scroll", animateCards);
@@ -83,29 +45,6 @@ function isVisible(elem) {
     return topVisible || bottomVisible;
   }
 
-/*function isVisible(elem) {
-    let coords = elem.getBoundingClientRect();
-    let windowHeight = document.documentElement.clientHeight;
-
-    let topVisible = coords.top > 0 && coords.top < windowHeight;
-    let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
-
-    return topVisible || bottomVisible;
-}*/
-
-
-/*
-const openButton = document.querySelectorAll(".question-card");
-const text = document.querySelectorAll(".question-card-disc");
-const arrow = document.querySelectorAll(".questions-arrow");
-
-
-openButton.forEach(n => n.addEventListener("click", function (e) { 
-    this.lastElementChild.classList.toggle('visible');
-    this.firstElementChild.lastElementChild.firstElementChild.classList.toggle("active");
-}));
-
-*/
 /*accordion*/
 const accordion = document.querySelectorAll(".question-card-title");
 
@@ -151,14 +90,51 @@ for (let i = 0; i < aboutCard.length; i++) {
     })
 }
 
+
+
+/*mobile carusel*/
+
+let clientCardsWrap = document.querySelector(".carusel__wrap");
+let clientCards = document.querySelectorAll(".clients-card");
+let buttonLeft = document.querySelector(".left-arrow");
+let buttonRight = document.querySelector(".right-arrow");
+
+let position = 0;
+let cardWidth = 96;
+
+buttonRight.addEventListener("click", shiftToLeft);
+buttonLeft.addEventListener("click", shiftToRight);
+
+
+function shiftToLeft() {
+    buttonLeft.classList.remove("arrow-inactive");
+
+    position -= cardWidth;
+    position = Math.max(position, -cardWidth * (clientCards.length - 1));
+    clientCardsWrap.style.marginLeft = position + 'vw';
+
+    if (position == -cardWidth * (clientCards.length - 1)) {
+        buttonRight.classList.add("arrow-inactive");
+    };
+};
+
+function shiftToRight() {
+    buttonRight.classList.remove("arrow-inactive");
+
+    position += cardWidth;
+    position = Math.min(position, 0);
+    clientCardsWrap.style.marginLeft = position + 'vw';
+
+    if (position == 0) {
+        buttonLeft.classList.add("arrow-inactive");
+    };
+}
+
 /*filter mobile*/
  
-const filterButton = document.querySelector(".articles-filter-button");
+/*const filterButton = document.querySelector(".articles-filter-button");
 const filterList = document.querySelector(".articles-filter-wrap");
 
 filterButton.addEventListener("click", () => {
     filterList.classList.toggle("active");
-})
-
-/*mobile carusel*/
-
+});*/
