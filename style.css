@@ -176,6 +176,10 @@ a {
     display: flex;
 }
 
+.main-logo {
+    filter: invert(84%) sepia(52%) saturate(358%) hue-rotate(27deg) brightness(104%) contrast(95%) !important;
+}
+
 .icon-big {
     width: 3rem;
     height: 3rem;
@@ -1002,6 +1006,7 @@ footer {
 
 .articles-filter {
     display: flex;
+    flex-direction: column-reverse;
     gap: 1.5rem;
     justify-content: center;
     position: relative;
@@ -1009,19 +1014,20 @@ footer {
 
 .articles-filter-wrap {
     display: flex;
-    flex-direction: column;
     transition: 0.5s;
     gap: 1.5rem;
-    top: 5rem;
-    left: -100%;
-    position: absolute;
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 .articles-filter-wrap.active {
     display: flex;
     top: 5rem;
     left: 0;
+}
+
+.button-filter {
+    min-width: max-content;
 }
 
 .articles-pagination {
@@ -1057,6 +1063,15 @@ footer {
 .paggination-active, .filter-active {
     color: var(--white);
     background-color: var(--black);
+}
+
+.filter-active:hover {
+    color: var(--white) !important;
+    background-color: var(--black) !important;
+}
+
+.article-card-hidden {
+    display: none;
 }
 
 .paggination-inactive-image {
@@ -1434,6 +1449,18 @@ footer {
         font-family: var(--paragraph);
         font-size: 1rem;
         line-height: 180%;
+        transition: all 0.5s;
+        padding: 0.5rem 1rem;
+        margin: -0.5rem -1rem;
+        border-radius: 1.5rem;
+    }
+
+    .nav-link-active {
+        font-family: var(--subtitle);
+    }
+
+    .nav-link:hover {
+        background-color: var(--green);
     }
 
     .nav-buttons-wrap {
@@ -1915,6 +1942,10 @@ footer {
         align-items: start;
     }
 
+    .articles-filter {
+        flex-direction: row;
+    }
+
     .articles-filter-wrap {
         display: flex;
         flex-direction: row;
@@ -1938,14 +1969,6 @@ footer {
         border: 1px solid var(--green);
     }
     
-    .nav-link:hover {
-        text-decoration: underline;
-    }
-
-    .nav-link {
-        transition: 0.3s;
-    }
-
     .footer-main-link a:hover {
         text-decoration: underline;
         text-decoration-color: var(--white);

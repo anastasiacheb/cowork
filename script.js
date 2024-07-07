@@ -42,7 +42,7 @@ function isVisible(elem) {
     let topVisible = coords.top < 500 /*&& coords.top < windowHeight;*/
     /*let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;*/
 
-    return topVisible || bottomVisible;
+    return topVisible /*|| bottomVisible;*/
   }
 
 /*accordion*/
@@ -90,6 +90,40 @@ for (let i = 0; i < aboutCard.length; i++) {
     })
 }
 
+/*blog filter*/
+
+const filterButtons = document.querySelectorAll(".button-filter");
+const acticleCards = document.querySelectorAll(".article-card");
+
+for (let i = 0; i < filterButtons.length; i++) {
+    filterButtons[i].addEventListener("click", function() {
+        for (let h = 0; h < filterButtons.length; h++) {
+            filterButtons[h].classList.remove("filter-active");
+        };
+        this.classList.add("filter-active");
+        let buttonTag = this.innerHTML;
+        if (buttonTag == "All Posts") {
+            for (let g = 0; g < acticleCards.length; g++) {
+                acticleCards[g].classList.remove("article-card-hidden");
+            };
+        } else {
+            for (let g = 0; g < acticleCards.length; g++) {
+                acticleCards[g].classList.add("article-card-hidden");
+                let articleTag = acticleCards[g].firstElementChild.nextElementSibling.firstElementChild.firstElementChild.innerHTML;
+                if (buttonTag == articleTag) {
+                    acticleCards[g].classList.remove("article-card-hidden");
+                }
+            };
+        }
+    });
+}
+
+/*const filterButton = document.querySelector(".articles-filter-button");
+const filterList = document.querySelector(".articles-filter-wrap");
+
+filterButton.addEventListener("click", () => {
+    filterList.classList.toggle("active");
+});*/
 
 
 /*mobile carusel*/
@@ -130,11 +164,9 @@ function shiftToRight() {
     };
 }
 
+
+
+
+
 /*filter mobile*/
  
-/*const filterButton = document.querySelector(".articles-filter-button");
-const filterList = document.querySelector(".articles-filter-wrap");
-
-filterButton.addEventListener("click", () => {
-    filterList.classList.toggle("active");
-});*/
