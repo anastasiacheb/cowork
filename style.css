@@ -1570,6 +1570,7 @@ footer {
     .clients-card {
         min-width: 25vw;
         width: 26vw;
+        transition: all ease-out 0.5s;
     }
 
     .clients-cards-wrap {
@@ -1580,36 +1581,37 @@ footer {
         height: 850px;
     }
 
-    .clients-card {
+    .clients-card-not-viewed {
         top: 31px;
         left: 37vw;
         transform: rotate(10deg);
         z-index: 1;
         position: absolute;
+        transition: 0.3s;
     }
     
-    .clients-card:nth-child(2) {
+    .clients-card-not-viewed:nth-child(2) {
         top: 165px;
         left: 19vw;
         transform: rotate(-8deg);
         z-index: 2;
     }
     
-    .clients-card:nth-child(3) {
+    .clients-card-not-viewed:nth-child(3) {
         top: 136px;
         left: 50vw;
         transform: rotate(-4deg);
         z-index: 2;
     }
     
-    .clients-card:nth-child(4) {
+    .clients-card-not-viewed:nth-child(4) {
         top: 310px;
         left: 27vw;
         transform: rotate(8deg);
         z-index: 4;
     }
     
-    .clients-card:nth-child(5) {
+    .clients-card-not-viewed:nth-child(5) {
         top: 405px;
         left: 42vw;
         transform: rotate(-10deg);
@@ -1619,27 +1621,33 @@ footer {
     .clients-card-viewed {
         position: absolute;
         top: 15px;
-        left: 32vw;
+        left: 32vw ;
+        transform: rotate(0);
+        transition: 0.3s;
     }
     
     .clients-card-viewed:nth-child(2) {
         top: 41px;
         left: 4vw;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(3) {
         top: 73px;
         left: 63vw;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(4) {
         top: 429px;
         left: 18vw;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(5) {
         top: 459px;
         left: 48vw;
+        transform: rotate(0deg);
     }
 
     /*questions*/
@@ -1972,70 +1980,76 @@ footer {
     .clients-card {
         min-width: 22.5rem;
         width: 24rem;
+        transition: all ease-out 0.5s;
     }
 
     .clients-cards-wrap {
         height: 850px;
     }
 
-    .clients-card {
+    .clients-card-not-viewed {
         top: 31px;
         left: 540px;
         transform: rotate(10deg);
         z-index: 1;
     }
     
-    .clients-card:nth-child(2) {
+    .clients-card-not-viewed:nth-child(2) {
         top: 165px;
         left: 280px;
         transform: rotate(-8deg);
         z-index: 2;
     }
     
-    .clients-card:nth-child(3) {
+    .clients-card-not-viewed:nth-child(3) {
         top: 136px;
         left: 723px;
         transform: rotate(-4deg);
         z-index: 2;
     }
     
-    .clients-card:nth-child(4) {
+    .clients-card-not-viewed:nth-child(4) {
         top: 310px;
         left: 397px;
         transform: rotate(8deg);
         z-index: 4;
     }
     
-    .clients-card:nth-child(5) {
+    .clients-card-not-viewed:nth-child(5) {
         top: 405px;
         left: 603px;
         transform: rotate(-10deg);
         z-index: 3;
     }
 
-    .clients-card--viewed {
+    .clients-card-viewed {
         top: 15px;
         left: 490px;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(2) {
         top: 41px;
         left: 60px;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(3) {
         top: 73px;
         left: 911px;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(4) {
         top: 429px;
         left: 258px;
+        transform: rotate(0deg);
     }
     
     .clients-card-viewed:nth-child(5) {
         top: 459px;
         left: 688px;
+        transform: rotate(0deg);
     }
 
 }

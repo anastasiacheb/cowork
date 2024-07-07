@@ -19,9 +19,10 @@ navLink.forEach(n => n.addEventListener("click", () => {
 })
 )
 
+/*mobile carusel*/
 
 let clientCardsWrap = document.querySelector(".carusel__wrap");
-let clientCard = document.querySelectorAll(".clients-card");
+let clientCards = document.querySelectorAll(".clients-card");
 let buttonLeft = document.querySelector(".left-arrow");
 let buttonRight = document.querySelector(".right-arrow");
 
@@ -36,10 +37,10 @@ function shiftToLeft() {
     buttonLeft.classList.remove("arrow-inactive");
 
     position -= cardWidth;
-    position = Math.max(position, -cardWidth * (clientCard.length - 1));
+    position = Math.max(position, -cardWidth * (clientCards.length - 1));
     clientCardsWrap.style.marginLeft = position + 'vw';
 
-    if (position == -cardWidth * (clientCard.length - 1)) {
+    if (position == -cardWidth * (clientCards.length - 1)) {
         buttonRight.classList.add("arrow-inactive");
     };
 };
@@ -55,6 +56,42 @@ function shiftToRight() {
         buttonLeft.classList.add("arrow-inactive");
     };
 }
+
+/*clients amimation*/
+
+window.addEventListener("scroll", animateCards);
+
+function animateCards() {
+    for (let i = 0; i < clientCards.length; i++) {
+        if (isVisible(clientCardsWrap)) {
+            clientCards[i].classList.remove("clients-card-not-viewed");
+            clientCards[i].classList.add("clients-card-viewed");
+        }
+        
+    }
+}
+
+function isVisible(elem) {
+
+    let coords = elem.getBoundingClientRect();
+
+    let windowHeight = document.documentElement.clientHeight;
+
+    let topVisible = coords.top < 500 /*&& coords.top < windowHeight;*/
+    /*let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;*/
+
+    return topVisible || bottomVisible;
+  }
+
+/*function isVisible(elem) {
+    let coords = elem.getBoundingClientRect();
+    let windowHeight = document.documentElement.clientHeight;
+
+    let topVisible = coords.top > 0 && coords.top < windowHeight;
+    let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
+
+    return topVisible || bottomVisible;
+}*/
 
 
 /*
