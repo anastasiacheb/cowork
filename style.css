@@ -60,6 +60,11 @@ a {
     src: url(fonts/GeneralSans-Semibold.otf);
 }
 
+input:-webkit-autofill {
+    background-color: var(--white);
+}
+
+
 /*components*/
 
 .text-paragraph, p {
@@ -174,10 +179,6 @@ a {
     height: 1.5rem;
     width: auto;
     display: flex;
-}
-
-.main-logo {
-    filter: invert(84%) sepia(52%) saturate(358%) hue-rotate(27deg) brightness(104%) contrast(95%) !important;
 }
 
 .icon-big {
@@ -1386,6 +1387,14 @@ footer {
         height: 4rem;
     }
 
+    .main-logo {
+        transition: all 0.3s;
+    }
+    
+    .main-logo:hover {
+        filter: invert(75%) sepia(20%) saturate(445%) hue-rotate(282deg) brightness(105%) contrast(98%);
+    }
+
     /*layout*/
 
     .block {
@@ -1460,7 +1469,7 @@ footer {
     }
 
     .nav-link:hover {
-        background-color: var(--green);
+        background-color: var(--blue);
     }
 
     .nav-buttons-wrap {

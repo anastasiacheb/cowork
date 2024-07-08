@@ -14,7 +14,7 @@
 
         <nav>
             <div class="nav-logo-wrap">
-                <a href="index.html"><img src="/icons/Logo.svg" alt="Logo" class="icon-logo"></a>
+                <a href="index.html" class="main-logo"><img src="/icons/Logo.svg" alt="Logo" class="icon-logo"></a>
                 <div><img src="/icons/List.svg" alt="burger menu" class="button-small button-st-black nav-burger"></div>
             </div>
             <div class="nav-menu-wrap-mobile">
@@ -43,16 +43,16 @@
                 <p>Have questions about our coworking space and membership plans?  Drop us a line using the form below or give us a call.</p>
             </div>
             <div class="contact-content">
-                <form action="#" class="contact-form">
+                <form method="post" action="#" class="contact-form">
                     <div class="contact-name">
-                        <input type="text" name="first-name" id="first-name" placeholder="First Name" class="contact-input">
-                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" class="contact-input">
+                        <input type="text" name="first-name" id="first-name" placeholder="First Name *" class="contact-input" required>
+                        <input type="text" name="last-name" id="last-name" placeholder="Last Name *" class="contact-input" required>
                     </div>
-                    <input type="email" name="email" id="email" placeholder="Email Address" class="contact-input">
-                    <input type="tel" name="phone" id="phone" placeholder="Phone" class="contact-input">
+                    <input type="email" name="email" id="email" placeholder="Email Address *" class="contact-input" required>
+                    <input type="number" name="phone" id="phone" placeholder="Phone *" class="contact-input" required>
                     <div class="contact-select">
-                        <select name="plan" id="plan" placeholder="Select a plan" class="contact-input">
-                            <option value="0">Select a plan</option>
+                        <select name="plan" id="plan" placeholder="Select a plan" class="contact-input" required>
+                            <option value="" disabled selected hidden>Select a plan *</option>
                             <option value="Hot Desk">Hot Desk</option>
                             <option value="Dedicated Desk">Dedicated Desk</option>
                             <option value="Private Office">Private Office</option>
