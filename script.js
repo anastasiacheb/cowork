@@ -19,6 +19,22 @@ navLink.forEach(n => n.addEventListener("click", () => {
 })
 )
 
+const backToTopButton = document.querySelector(".back-to-top");
+
+backToTopButton.addEventListener("click", () => {
+    window.scrollTo(0, 0);
+})
+
+window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > document.documentElement.clientHeight) {
+        backToTopButton.classList.add("visible");
+    } else {
+        backToTopButton.classList.remove("visible");
+    }
+})
+
+
+
 /*clients amimation*/
 
 window.addEventListener("scroll", animateCards);
@@ -33,17 +49,37 @@ function animateCards() {
     }
 }
 
+window.addEventListener("scroll", animateBlocks);
+
+const docSection = document.querySelectorAll(".animated-block");
+
+
+function animateBlocks() {
+    for (let i = 0; i < docSection.length; i++) {
+        if (isVisible(docSection[i])) {
+            docSection[i].classList.add('inview');
+        }
+    }
+}
+
 function isVisible(elem) {
 
     let coords = elem.getBoundingClientRect();
 
     let windowHeight = document.documentElement.clientHeight;
 
-    let topVisible = coords.top < 500 /*&& coords.top < windowHeight;*/
-    /*let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;*/
+    let topVisible = coords.top < 500 
 
-    return topVisible /*|| bottomVisible;*/
+    return topVisible 
   }
+
+  const docHeader = document.querySelectorAll(".top-animated-block");
+
+  window.addEventListener("load", () => {
+    for (let i = 0; i < docHeader.length; i++) {
+        docHeader[i].classList.add("inview");
+    }
+  })
 
 /*accordion*/
 const accordion = document.querySelectorAll(".question-card-title");
@@ -163,6 +199,7 @@ function shiftToRight() {
         buttonLeft.classList.add("arrow-inactive");
     };
 }
+
 
 
 

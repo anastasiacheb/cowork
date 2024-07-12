@@ -3,6 +3,7 @@ body {
     color: var(--black);
     background-color: var(--white);
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 .body-overflow {
@@ -13,6 +14,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 img {
@@ -66,6 +68,44 @@ input:-webkit-autofill {
 
 
 /*components*/
+
+.animated-block {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.animated-block.inview {
+    opacity: 1;
+}
+
+.top-animated-block {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.top-animated-block.inview {
+    opacity: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-90deg);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 50% !important;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
 
 .text-paragraph, p {
     font-family: var(--paragraph);
@@ -399,12 +439,11 @@ nav {
 /*logo section*/
 
 .logos {
-    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 3rem 1.25rem;
-    align-items: center;
+    overflow-x: hidden;
 }
 
 .logo-wrap {
@@ -1337,7 +1376,9 @@ footer {
 @media screen and (min-width: 768px) {
 
     /*components*/
-    
+    .back-to-top {
+        margin: 3rem;
+    }
 
     .image-main {
         border-radius: 3rem;
@@ -1532,6 +1573,7 @@ footer {
         gap: 1.5rem;
         padding: 5rem 4rem;
         align-items: center;
+        text-align: center;
     }
     
     .logo-wrap {
