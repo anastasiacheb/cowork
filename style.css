@@ -655,6 +655,7 @@ nav {
     bottom: 0;
     width: 8.5rem;
     border-bottom: 2px solid var(--black);
+    z-index: -1;
 }
 
 .question-card-disc {
@@ -1066,9 +1067,10 @@ footer {
     background-color: var(--black);
 }
 
-.filter-active:hover {
+.filter-active:hover, .paggination-active:hover {
     color: var(--white) !important;
     background-color: var(--black) !important;
+    border-color: var(--black) !important;
 }
 
 .article-card-hidden {
@@ -1082,6 +1084,12 @@ footer {
 
 .paggination-inactive {
     border-color: gray;
+    cursor: auto;
+}
+
+.paggination-inactive:hover {
+    background-color: var(--white) !important;
+    border-color: gray !important;
 }
 
 .articles-filter-search input {
@@ -1459,9 +1467,9 @@ footer {
         font-size: 1rem;
         line-height: 180%;
         transition: all 0.5s;
-        padding: 0.5rem 1rem;
-        margin: -0.5rem -1rem;
-        border-radius: 1.5rem;
+        border-bottom: 2px solid var(--white);
+        padding-bottom: 4px;
+        margin-bottom: -6px;
     }
 
     .nav-link-active {
@@ -1469,7 +1477,7 @@ footer {
     }
 
     .nav-link:hover {
-        background-color: var(--blue);
+        border-bottom: 2px solid var(--black);
     }
 
     .nav-buttons-wrap {
@@ -1976,6 +1984,12 @@ footer {
     .button-st-white:hover {
         background-color: var(--green);
         border: 1px solid var(--green);
+    }
+
+    .pricing-button:hover {
+        color: var(--black);
+        background-color: var(--lightgray);
+        border: 1px solid var(--black);
     }
     
     .footer-main-link a:hover {
