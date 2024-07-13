@@ -73,7 +73,7 @@ input:-webkit-autofill {
     display: none !important;
 }
 
-/*.animated-block {
+.animated-block {
     opacity: 0;
     transition: all 0.5s;
 }
@@ -89,7 +89,7 @@ input:-webkit-autofill {
 
 .top-animated-block.inview {
     opacity: 1;
-}*/
+}
 
 .back-to-top {
     position: fixed;

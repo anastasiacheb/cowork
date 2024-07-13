@@ -49,7 +49,7 @@ function animateCards() {
     }
 }
 
-/*window.addEventListener("scroll", animateBlocks);
+window.addEventListener("scroll", animateBlocks);
 
 const docSection = document.querySelectorAll(".animated-block");
 
@@ -60,7 +60,7 @@ function animateBlocks() {
             docSection[i].classList.add('inview');
         }
     }
-}*/
+}
 
 function isVisible(elem) {
 
@@ -73,13 +73,13 @@ function isVisible(elem) {
     return topVisible 
   }
 
- /* const docHeader = document.querySelectorAll(".top-animated-block");
+  const docHeader = document.querySelectorAll(".top-animated-block");
 
   window.addEventListener("load", () => {
     for (let i = 0; i < docHeader.length; i++) {
         docHeader[i].classList.add("inview");
     }
-  })*/
+  })
 
 /*accordion*/
 const accordion = document.querySelectorAll(".question-card-title");
