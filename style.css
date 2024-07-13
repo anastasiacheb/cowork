@@ -69,6 +69,10 @@ input:-webkit-autofill {
 
 /*components*/
 
+.pagination-desctop {
+    display: none !important;
+}
+
 .animated-block {
     opacity: 0;
     transition: all 0.5s;
@@ -596,6 +600,8 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 4rem 5vw;
+
 }
 
 .clients-disc {
@@ -633,7 +639,7 @@ nav {
 
 .carusel__wrap {
     display: flex;
-    gap: 2rem;
+    gap: 5vw;
     width: 9999px;
     transition: 0.3s;
 }
@@ -1426,6 +1432,14 @@ footer {
 
 /*usual screens without space on sides*/
 @media screen and (min-width: 768px) {
+
+    .pagination-mobile {
+        display: none;
+    }
+
+    .pagination-desctop {
+        display: flex !important;
+    }
 
     /*components*/
     .back-to-top {

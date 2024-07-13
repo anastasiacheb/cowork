@@ -170,7 +170,7 @@ let buttonLeft = document.querySelector(".left-arrow");
 let buttonRight = document.querySelector(".right-arrow");
 
 let position = 0;
-let cardWidth = 96;
+let cardWidth = 95;
 
 buttonRight.addEventListener("click", shiftToLeft);
 buttonLeft.addEventListener("click", shiftToRight);
@@ -199,11 +199,3 @@ function shiftToRight() {
         buttonLeft.classList.add("arrow-inactive");
     };
 }
-
-
-
-
-
-
-/*filter mobile*/
- 
